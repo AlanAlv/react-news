@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Form.module.css';
 import useSelect from '../hooks/useSelect'
 
-const Form = () => {
+const Form = ({saveCategory}) => {
 
     const OPTIONS = [
         {value: 'general', label: 'General'},
@@ -17,11 +17,18 @@ const Form = () => {
     // Custom Hook
     const [ category, SelectNews ] = useSelect('general', OPTIONS);
 
+    // User clicks submit
+    const searchNews = e => {
+        e.preventDefault();
+
+        saveCategory(category);
+    }
+
     return (
         <div className={`${styles.searcher} row`}>
             <div className="col s12 m8 offset-m2">
                 <form 
-                    
+                    onSubmit={searchNews}
                 >
                     <h2 className={styles.heading}>Search by category</h2>
 

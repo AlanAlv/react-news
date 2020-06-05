@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
 
 
 
 function App() {
+
+  const [ category, saveCategory ] = useState('');
+
   return (
     <Fragment>
       <Header 
@@ -12,9 +15,9 @@ function App() {
       />
 
       <div className="container white">
-        <Form>
-          
-        </Form>
+        <Form 
+          saveCategory={saveCategory}
+        />
       </div>
     </Fragment>
   );
