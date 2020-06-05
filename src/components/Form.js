@@ -21,6 +21,7 @@ const Form = ({saveCategory}) => {
     const searchNews = e => {
         e.preventDefault();
 
+        console.log(category);
         saveCategory(category);
     }
 
@@ -38,7 +39,7 @@ const Form = ({saveCategory}) => {
                             type="submit" 
                             value="Search"
                             className={`${styles['btn-block']} btn-large amber darken-2`}
-                            />
+                        />
                     </div>
                 </form>
           </div>

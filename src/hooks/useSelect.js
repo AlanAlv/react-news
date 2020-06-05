@@ -7,12 +7,14 @@ const useSelect = (initialState, options) => {
     const SelectNews = () => (
         <select 
             className="browser-default"
+            value={state}
+            onChange={e => updateState(e.target.value)}
         >
             {options.map( option => (
                 <option 
                     key={option.value} 
                     value={option.value}
-                    onChange={e => updateState(e.target.value)}
+                
                 >
                     {option.label}
                 </option>
