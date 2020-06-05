@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Form.module.css';
-import useSelect from '../hooks/useSelect'
+import useSelect from '../hooks/useSelect';
+import PropTypes from 'prop-types';
 
 const Form = ({saveCategory}) => {
 
@@ -21,7 +22,6 @@ const Form = ({saveCategory}) => {
     const searchNews = e => {
         e.preventDefault();
 
-        console.log(category);
         saveCategory(category);
     }
 
@@ -46,5 +46,9 @@ const Form = ({saveCategory}) => {
         </div>
       );
 }
- 
+
+Form.propTypes = {
+    saveCategory: PropTypes.func.isRequired
+}
+
 export default Form;

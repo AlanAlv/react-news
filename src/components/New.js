@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './New.module.css'
+import PropTypes from 'prop-types';
 
 const New = ({article}) => {
 
@@ -39,6 +40,10 @@ const New = ({article}) => {
             </div>
         </div>
      );
+}
+
+New.propTypes = {
+    article: PropTypes.object.isRequired
 }
  
 export default New;

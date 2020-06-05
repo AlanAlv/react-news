@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types';
 
 const useSelect = (initialState, options) => {
     
@@ -23,5 +24,10 @@ const useSelect = (initialState, options) => {
     );
 
     return [state, SelectNews];
+}
+
+useSelect.propTypes = {
+    initialState: PropTypes.string.isRequired,
+    options: PropTypes.array.isRequired
 }
 export default useSelect;
