@@ -1,7 +1,22 @@
 import React from 'react';
-import styles from './Form.module.css'
+import styles from './Form.module.css';
+import useSelect from '../hooks/useSelect'
 
 const Form = () => {
+
+    const OPTIONS = [
+        {value: 'general', label: 'General'},
+        {value: 'business', label: 'Business'},
+        {value: 'entertainment', label: 'Entertainment'},
+        {value: 'health', label: 'Health'},
+        {value: 'science', label: 'Science'},
+        {value: 'sports', label: 'Sports'},
+        {value: 'technology', label: 'Technology'}
+    ]
+
+    // Custom Hook
+    const [ category, SelectNews ] = useSelect('general', OPTIONS);
+
     return (
         <div className={`${styles.searcher} row`}>
             <div className="col s12 m8 offset-m2">
@@ -10,6 +25,7 @@ const Form = () => {
                 >
                     <h2 className={styles.heading}>Search by category</h2>
 
+                    <SelectNews />
                     <div className="input-field col s12">
                         <input 
                             type="submit" 
